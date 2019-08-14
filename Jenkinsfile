@@ -44,14 +44,14 @@ pipeline {
                     }
                 }
 
-                stage('smoketest-dev') {
-                    steps {
-                        sh "APP_ENDPOINT=$(oc get endpoints nodejs -n nodejs | awk 'NR>1{print $2}')"
-
-                        echo "smoke testing dev"
-                        sh "curl $APP_ENDPOINT | grep -q -e 'HTTP/1.1 200 OK'"
-                    }
-                }
+//                 stage('smoketest-dev') {
+//                     steps {
+//                         sh "APP_ENDPOINT=$(oc get endpoints nodejs -n nodejs | awk 'NR>1{print $2}')"
+//
+//                         echo "smoke testing dev"
+//                         sh "curl $APP_ENDPOINT | grep -q -e 'HTTP/1.1 200 OK'"
+//                     }
+//                 }
 
             }
         }
