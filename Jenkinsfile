@@ -30,7 +30,7 @@ pipeline {
                         withCredentials([usernamePassword(credentialsId: 'jenkins-nonprod', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                             sh 'oc login https://openshift-master.ocpnonprod.eigwc.com --token=$PASSWORD'
                         }
-                        sh 'oc start-build nodejs'
+                        sh 'oc start-build nodejs -w'
                     }
                 }
 
