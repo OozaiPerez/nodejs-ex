@@ -39,8 +39,8 @@ pipeline {
                         echo "deploying to dev"
                         sh 'oc scale dc/nodejs --replicas=1'
                         sh 'oc rollout latest dc/nodejs'
-                        sh 'oc rollout status --request-timeout=0 dc/policybatchservice || true'
-                        sh 'oc rollout status --request-timeout=0 dc/policybatchservice'
+                        sh 'oc rollout status --request-timeout=0 dc/nodejs || true'
+                        sh 'oc rollout status --request-timeout=0 dc/nodejs'
                     }
                 }
 
